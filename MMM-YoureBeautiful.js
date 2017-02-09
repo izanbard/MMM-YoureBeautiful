@@ -72,7 +72,7 @@ Module.register("MMM-YoureBeautiful", {
         overlay.appendChild(videoDiv);
 
         var title = document.createElement("div");
-        title.classList.add("bold", "large");
+        title.classList.add("bold", "large", "message");
         title.innerHTML = message;
         overlay.appendChild(title);
 
