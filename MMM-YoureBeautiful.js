@@ -68,7 +68,7 @@ Module.register("MMM-YoureBeautiful", {
 
 
         var videoDiv = document.createElement("video");
-        videoDiv.src = "/" + self.name + "/" + video;
+        videoDiv.src = "/modules/" + self.name + "/public/" + video;
         videoDiv.id = "MMM-YoureBeautifulVideoDiv";
         videoDiv.autoplay = false;
         overlay.appendChild(videoDiv);
