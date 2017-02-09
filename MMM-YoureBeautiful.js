@@ -61,21 +61,24 @@ Module.register("MMM-YoureBeautiful", {
             message = this.config.halloweenFaceFileText;
         }
 
-        var overlay = document.createElement("div");
-        overlay.classList.add("black_overlay");
+        var wrapper = document.createElement("div");
+        wrapper.classList.add("black_overlay");
 
+        var container = document.createElement("div");
+        container.classList.add("content");
 
         var videoDiv = document.createElement("video");
         videoDiv.src = "/modules/" + self.name + "/public/" + video;
         videoDiv.id = "MMM-YoureBeautifulVideoDiv";
         videoDiv.autoplay = false;
-        overlay.appendChild(videoDiv);
+        container.appendChild(videoDiv);
 
         var title = document.createElement("div");
         title.classList.add("bold", "large", "message");
         title.innerHTML = message;
-        overlay.appendChild(title);
+        container.appendChild(title);
 
+        wrapper.appendChild(container);
 
         var i = setInterval(function () {
             if (videoDiv.readyState > 0) {
@@ -83,12 +86,13 @@ Module.register("MMM-YoureBeautiful", {
                 clearInterval(i);
             }
         }, 200);
-        return overlay;
+        return wrapper;
     },
 
     getStyles: function () {
         return [this.file("css/MMM-YoureBeautiful.css")];
     },
+
     showVid: function () {
         var self = this;
         var video = document.getElementById("MMM-YoureBeautifulVideoDiv");
@@ -114,5 +118,4 @@ Module.register("MMM-YoureBeautiful", {
             }
         }
     }
-
 });

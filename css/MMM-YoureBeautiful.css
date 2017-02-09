@@ -1,7 +1,15 @@
-.MMM-YoureBeautiful video {
-    margin: auto;
+.MMM-YoureBeautiful .content {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
 }
 
-.MMM-YoureBeautiful .message {
-    margin: 0 auto;
+.MMM-YoureBeautiful .black_overlay {
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 1);
+    width: 100%;
+    height: 100%;
 }
