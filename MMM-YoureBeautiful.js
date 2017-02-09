@@ -2,9 +2,9 @@
 
 Module.register("MMM-YoureBeautiful", {
     defaults: {
-        faceFile: "jamesblunt.mpg",
+        faceFile: "jamesblunt.mp4",
         faceFileText: "jamesblunt.mpg",
-        halloweenFaceFile: "scary.mpg",
+        halloweenFaceFile: "scary.mp4",
         halloweenFaceFileText: "scary.mpg",
         birthdayFaceFile: "happyBirthday.mpg",
         birthdayFaceFileText: "happyBirthday.mpg",
@@ -56,7 +56,7 @@ Module.register("MMM-YoureBeautiful", {
             }
         }
 
-        if (daytype === daytypes[1]) {
+        if (daytype === daytypes[2]) {
             video = this.config.halloweenFaceFile;
             message = this.config.halloweenFaceFileText;
         }
@@ -68,7 +68,7 @@ Module.register("MMM-YoureBeautiful", {
 
 
         var videoDiv = document.createElement("video");
-        videoDiv.src = video;
+        videoDiv.src = "/" + self.name + "/" + video;
         videoDiv.id = "MMM-YoureBeautifulVideoDiv";
         videoDiv.autoplay = false;
         overlay.appendChild(videoDiv);
