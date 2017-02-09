@@ -92,7 +92,7 @@ Module.register("MMM-YoureBeautiful", {
     showVid: function () {
         var self = this;
         var video = document.getElementById("MMM-YoureBeautifulVideoDiv");
-        if (videoDiv.readyState === 0) {
+        if (video.readyState === 0) {
             this.hide();
             return;
         }
@@ -110,7 +110,7 @@ Module.register("MMM-YoureBeautiful", {
             this.hide();
             if (this.intervalTimer === undefined) {
                 var self = this;
-                this.intervalTimer = setInterval(self.showVid, this.config.interval);
+                this.intervalTimer = setInterval(self.showVid.bind(this), this.config.interval);
             }
         }
     }
