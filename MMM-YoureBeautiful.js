@@ -62,7 +62,7 @@ Module.register("MMM-YoureBeautiful", {
         }
 
         var overlay = document.createElement("div");
-        overlay.innerHTML += "<div class=\"black_overlay\"></div>";
+        overlay.classList.add("black_overlay");
 
 
         var videoDiv = document.createElement("video");
