@@ -102,7 +102,7 @@ Module.register("MMM-YoureBeautiful", {
         video.play();
         setTimeout(function () {
             self.hide();
-        }, this.duration);
+        }, this.duration * 1000);
     },
 
     notificationReceived: function (notification) {
