@@ -2,14 +2,14 @@
 
 Module.register("MMM-YoureBeautiful", {
     defaults: {
-        faceFile: "jamesblunt.mp4",
+        faceFile: "jamesblunt.mp4",//set as list of videos
         faceFileText: "jamesblunt.mpg",
         halloweenFaceFile: "scary.mp4",
         halloweenFaceFileText: "scary.mpg",
         birthdayFaceFile: "happyBirthday.mpg",
         birthdayFaceFileText: "happyBirthday.mpg",
         birthday: {year: 1977, month: 3, day: 6},
-        likelyHood: {numerator: 1, denominator: 100}, //1 chance in 100
+        likelyHood: {numerator: 60, denominator: 100}, //1 chance in 100
         interval: 2 * 60 * 1000 //2mins
     },
 
@@ -100,12 +100,16 @@ Module.register("MMM-YoureBeautiful", {
             this.hide();
             return;
         }
-        //roll the dice
+        var rolledDice = Math.ceil(Math.random() * this.config.likelyHood.denominator);
+        if (!(this.config.likelyHood.numerator <= rolledDice)) {
+            return;
+        }
         video.currentTime = 0;
         this.show();
         video.play();
         setTimeout(function () {
             self.hide();
+            //update the Domvideo
         }, this.duration * 1000);
     },
 
