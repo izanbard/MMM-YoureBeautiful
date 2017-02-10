@@ -9,7 +9,7 @@ Module.register("MMM-YoureBeautiful", {
         birthdayFaceFile: "happyBirthday.mpg",
         birthdayFaceFileText: "happyBirthday.mpg",
         birthday: {year: 1977, month: 3, day: 6},
-        likelyHood: {numerator: 60, denominator: 100}, //1 chance in 100
+        likelyHood: {numerator: 1, denominator: 100}, //1 chance in 100
         interval: 2 * 60 * 1000 //2mins
     },
 
@@ -101,7 +101,7 @@ Module.register("MMM-YoureBeautiful", {
             return;
         }
         var rolledDice = Math.ceil(Math.random() * this.config.likelyHood.denominator);
-        if (!(this.config.likelyHood.numerator <= rolledDice)) {
+        if (this.config.likelyHood.numerator <= rolledDice) {
             return;
         }
         video.currentTime = 0;
